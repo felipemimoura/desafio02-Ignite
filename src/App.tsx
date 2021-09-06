@@ -1,18 +1,9 @@
-import { useEffect, useState } from 'react';
-
-import { Button } from './components/Button';
-import { MovieCard } from './components/MovieCard';
-
-
+import { useState } from 'react';
 import { Content } from './components/Content';
-
-import { api } from './services/api';
-
-import './styles/global.scss';
-
-import './styles/sidebar.scss';
-import './styles/content.scss';
 import { SideBar } from './components/SideBar';
+import './styles/content.scss';
+import './styles/global.scss';
+import './styles/sidebar.scss';
 
 interface GenreResponseProps {
   id: number;
@@ -25,6 +16,7 @@ export function App() {
   const [selectedGenreId, setSelectedGenreId] = useState(1);
   
   function handleSelectGenre(genre: GenreResponseProps) {
+    console.log(genre)
     setSelectedGenreId(genre.id);
   }
 
@@ -36,14 +28,6 @@ export function App() {
       <div className="container">
         <Content idGenre={selectedGenreId}/>
 
-{/* 
-        <main>
-          <div className="movies-list">
-            {movies.map(movie => (
-              <MovieCard key ={movie.imdbID} title={movie.Title} poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value} />
-            ))}
-          </div>
-        </main> */}
       </div>
     </div>
   )
