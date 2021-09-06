@@ -16,7 +16,7 @@ export function App() {
   const [selectedGenreId, setSelectedGenreId] = useState(1);
   
   function handleSelectGenre(genre: GenreResponseProps) {
-    console.log(genre)
+   
     setSelectedGenreId(genre.id);
   }
 

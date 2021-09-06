@@ -36,7 +36,7 @@ export function Content({idGenre}: ContentProps)  {
 
 
  useEffect(() => {
-   console.log(genreId)
+  
   api.get<MovieProps[]>(`movies/?Genre_id=${genreId}`).then(response => {
     setMovies(response.data);
     
