@@ -27,7 +27,7 @@ export function SideBar({ handleSelectGenre }: SideBarProps) {
     api.get<GenreResponseProps[]>('genres').then(response => {
       setGenres(response.data);
     });
-  },[genres])
+  },[])
 
   return(
     <nav className="sidebar">
